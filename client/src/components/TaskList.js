@@ -23,11 +23,11 @@ const TaskList = () => {
   }, [auth]);
 
   return (
-    <div>
+    <div className="container fade-in">
       <TaskForm setTasks={setTasks} />
       <ul>
         {tasks.map((task) => (
-          <li key={task._id}>
+          <li key={task._id} className="task-item">
             <h3>{task.title}</h3>
             <p>{task.description}</p>
             <p>{task.dueDate}</p>
