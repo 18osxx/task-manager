@@ -1,4 +1,4 @@
-import React, { useState, userContext } from "react";
+import React, { useState, useContext } from "react";
 import axios from "axios";
 import { AuthContext } from "../context/AuthContext";
 
@@ -18,9 +18,10 @@ const Login = () => {
         formData
       );
       setAuth(response.data);
-      // Redirect to tasks page or other actions
+      alert("Login successful!");
     } catch (error) {
       console.error("Error logging in user", error);
+      alert("Login failed!");
     }
   };
 
