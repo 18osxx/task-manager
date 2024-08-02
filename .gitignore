@@ -1,0 +1,5 @@
+# Protected files 
+.env
+
+# Protected directories
+/node_modules
