@@ -11,10 +11,25 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/users/register", formData);
-      alert("Registration successful!");
+      console.log("Attempting to register user:", formData.username);
+      const response = await axios.post(
+        "http://localhost:5000/users/register",
+        formData
+      );
+      if (response.status === 201) {
+        alert("Registration successful!");
+        console.log("Registration successful for user:", formData.username);
+      } else {
+        alert("Registration failed!");
+        console.log(
+          "Registration failed for user:",
+          formData.username,
+          "Response:",
+          response
+        );
+      }
     } catch (error) {
-      console.error("Error registering user", error);
+      console.error("Error registering user:", formData.username, error);
       alert("Registration failed!");
     }
   };
