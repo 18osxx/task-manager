@@ -26,8 +26,10 @@ const TaskForm = ({ setTasks }) => {
         }
       );
       setTasks((prevTasks) => [...prevTasks, response.data]);
+      alert("Task created successfully!");
     } catch (error) {
       console.error("Error creating task", error);
+      alert("Failed to create task!");
     }
   };
 
