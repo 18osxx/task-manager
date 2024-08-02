@@ -2,8 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const userRoutes = require('./routes/userRoutes');
-const taskRoutes = require('./routes/taskRoutes');
+const userRoutes = require('../client/src/routes/userRoutes');
+const taskRoutes = require('../client/src/routes/taskRoutes');
 require('dotenv').config({ path: './.env' });
 
 const mongodbUri = process.env.MONGODB_URI;
